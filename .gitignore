@@ -1,1 +1,14 @@
 .gradle/
+build/distributions/DesignPatterns-SER316-aarif.tar
+build/distributions/DesignPatterns-SER316-aarif.zip
+build/libs/DesignPatterns-SER316-aarif.jar
+build/scripts/DesignPatterns-SER316-aarif
+build/scripts/DesignPatterns-SER316-aarif.bat
+build/classes/
+build/reports/
+build/spotbugs/
+build/spotbugsMain-analyse-class-file.txt
+build/spotbugsTest-analyse-class-file.txt
+build/test-results/
+build/tmp/
+
