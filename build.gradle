@@ -32,8 +32,8 @@ dependencies {
 
  tasks.withType(Checkstyle) {
    reports {
-     html.enabled = true
-     xml.enabled = false
+     html.required = true
+     xml.required = false
    }
  }
  checkstyle {
@@ -47,8 +47,8 @@ dependencies {
 // To generate an HTML report instead of XML
  spotbugsMain {
      reports {
-         xml.enabled = false
-         html.enabled = true
+         xml.required = false
+         html.required = true
      }
  }
  spotbugs {
