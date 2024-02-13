@@ -12,16 +12,4 @@ public class test {
 
     }
 
-    @Test
-    public void testSum() {
-
-        int num1 = 5;
-        int num2 = 7;
-
-        int result = Main.sum(num1, num2);
-        int expected = 12;
-        assertEquals(expected, result);
-
-    }
-
 }

@@ -1,14 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
 
-public class Main{
-	public static void main(String[] args) {
-		sum(5,6);
-	}
-
-	public static int sum(int num1, int num2) {
-
-		int add = num1 + num2;
-		System.out.println(add);
-
-		return add;
-	}
+        System.out.println("Welcome!");
+        System.out.println();
+        System.out.println(".........Starting new game");
+        System.out.println();
+        System.out.println("Let's begin by choosing a character");
+        System.out.println("Character chosen:");
+        Class character = new Class();
+        character.randomClass();
+        System.out.println("Class: " + character.name);
+        System.out.println("Strength: " + character.strength);
+        System.out.println("Special Ability: " + character.specialAbility);
+    }
 }
