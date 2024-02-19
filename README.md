@@ -2,7 +2,7 @@
 
 My adaptation of the RPG Dungeon Crawler game is inspired by one of my favorite fictional series called "A Court of Thorns and Roses". I will be implementing character classes and types, weapons and skills, and basic layout of the floors and evironment, roughly based on the dystopian world depicted in these books. The three design patterns I plan to implement from the Gang of Four include:
 
-1. Decorator Pattern:
+1. Factory Pattern:
    This will be useful for character and skill upgrades.
    
 2. Strategy Pattern:
