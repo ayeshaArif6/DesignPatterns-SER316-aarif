@@ -1,2 +1,5 @@
-package Factory;public interface EnemyFactory {
+package Factory;
+
+public interface EnemyFactory {
+    Enemy createEnemy();
 }

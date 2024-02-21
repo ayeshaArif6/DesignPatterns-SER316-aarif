@@ -1,2 +1,5 @@
-package Factory;public interface CharacterFactory {
+package Factory;
+
+public interface CharacterFactory {
+    Character createCharacter();
 }

@@ -1,5 +1,16 @@
 package Factory;
 public class Assassin implements Character {
+
+    private String name;
+    private int healthPoints;
+    private String description;
+
+    public Assassin(String name, int healthPoints, String description) {
+        this.name = name;
+        this.healthPoints = healthPoints;
+        this.description = description;
+    }
+
     @Override
     public void displayInfo() {
         System.out.println("This is a Assassin.");
@@ -7,17 +18,17 @@ public class Assassin implements Character {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public int getHealthPoints() {
-        return 350;
+        return healthPoints;
     }
 
     @Override
     public String getDescription() {
-        return "stealth";
+        return description;
     }
 }
 

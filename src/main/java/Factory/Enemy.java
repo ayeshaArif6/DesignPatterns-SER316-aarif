@@ -1,2 +1,5 @@
-package Factory;public interface Enemy {
+package Factory;
+
+public interface Enemy {
+    void displayInfo();
 }
