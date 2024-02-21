@@ -1,2 +1,6 @@
-package Decorator;public interface ccc {
+package Decorator;
+public interface Item {
+    String getDescription();
+
 }
+

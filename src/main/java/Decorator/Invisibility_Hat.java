@@ -6,3 +6,4 @@ public class Invisibility_Hat implements Item {
         return "Invisibility Hat";
     }
 }
+
