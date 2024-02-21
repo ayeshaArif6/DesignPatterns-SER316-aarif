@@ -6,3 +6,4 @@ public class Mortal implements Player {
         System.out.println("This is a Mortal.");
     }
 }
+

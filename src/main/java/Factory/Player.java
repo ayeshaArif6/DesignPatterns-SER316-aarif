@@ -1,2 +1,5 @@
-package Factory;public interface Player {
+package Factory;
+
+public interface Player {
+    void displayInfo();
 }

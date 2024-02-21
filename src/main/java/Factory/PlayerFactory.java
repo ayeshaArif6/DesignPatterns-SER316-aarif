@@ -1,2 +1,5 @@
-package Factory;public interface PlayerFactory {
+package Factory;
+
+public interface PlayerFactory {
+    Player createPlayer();
 }
