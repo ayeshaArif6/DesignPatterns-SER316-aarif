@@ -1,5 +1,6 @@
 package Decorator;
 
+//This class initializes a dagger as part of the weapons.
 public class Dagger implements Item {
     @Override
     public String getDescription() {

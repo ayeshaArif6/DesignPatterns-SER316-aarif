@@ -1,9 +1,10 @@
 package Decorator;
 
+//Crossbow class is part of the weapons and implements the item interface.
 public class Crossbow implements Item {
     @Override
     public String getDescription() {
-        return "Cross bow";
+        return "Crossbow";
     }
 
 }

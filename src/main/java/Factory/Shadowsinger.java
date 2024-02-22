@@ -1,10 +1,14 @@
 package Factory;
+
+/**
+ * This is a concrete product for the factory design pattern.
+ */
 public class Shadowsinger implements Character {
     private String name;
     private int healthPoints;
     private String description;
 
-    // Constructor to initialize attributes
+
     public Shadowsinger(String name, int healthPoints, String description) {
         this.name = name;
         this.healthPoints = healthPoints;

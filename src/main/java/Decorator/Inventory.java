@@ -24,12 +24,4 @@ public class Inventory {
         }
     }
 
-    public Item getWeapon(int index) {
-        if (index >= 0 && index < weapons.size()) {
-            return weapons.get(index);
-        } else {
-            System.out.println("Invalid weapon index. Returning default weapon.");
-            return new Sword(); // Return a default weapon (you can change this)
-        }
-    }
 }

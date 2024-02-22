@@ -3,24 +3,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This is a concrete factory for the factory design pattern
+ */
 public class ShadowsingerFactory implements CharacterFactory {
 
     private List<Character> shadowsinger;
     public ShadowsingerFactory() {
         shadowsinger = new ArrayList<>();
-        initializeShadowsingers(); // Initialize the list with fighter instances
+        initializeShadowsingers();
     }
 
     private void initializeShadowsingers() {
-        // Add multiple Fighter instances with different attributes to the list
-        shadowsinger.add(new Shadowsinger("Shadowsinger", 400, "Manipulate shadows."));
+        shadowsinger.add(new Shadowsinger("Shadowsinger", 700, "Manipulate shadows."));
 
-        // Add more fighters as needed
     }
 
     @Override
     public Character createCharacter() {
-        // Randomly select a Fighter from the list
         Random random = new Random();
         int index = random.nextInt(shadowsinger.size());
         return shadowsinger.get(index);

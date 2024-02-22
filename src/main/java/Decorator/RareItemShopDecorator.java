@@ -13,7 +13,6 @@ public class RareItemShopDecorator implements ShopDecorator {
     @Override
     public List<Item> getAvailableItems() {
         List<Item> items = new ArrayList<>(shop.getAvailableItems());
-        // Add rare items like instant level-up
         items.add(new InstantLevelUpItem());
         return items;
     }

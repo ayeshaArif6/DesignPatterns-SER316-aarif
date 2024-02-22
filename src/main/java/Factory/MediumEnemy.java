@@ -1,4 +1,8 @@
 package Factory;
+
+/**
+ * This is one of the concrete products for the factory design pattern.
+ */
 public class MediumEnemy implements Enemy {
     private String name;
     private int healthPoints;
@@ -19,7 +23,12 @@ public class MediumEnemy implements Enemy {
         System.out.println();
     }
 
-    public String getName(){
+    @Override
+    public int getHealth() {
+        return 0;
+    }
+
+    public String getName() {
         return name;
     }
 }

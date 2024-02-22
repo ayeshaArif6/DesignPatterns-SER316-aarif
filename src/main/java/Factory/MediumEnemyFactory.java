@@ -3,9 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-// Package: enemy
+/**
+ * This is a concrete factory for the factory design pattern
+ */
 public class MediumEnemyFactory implements EnemyFactory {
-    private List<Enemy> mediumEnemies;
+    public List<Enemy> mediumEnemies;
 
     public MediumEnemyFactory() {
         mediumEnemies = new ArrayList<>();
@@ -14,7 +16,6 @@ public class MediumEnemyFactory implements EnemyFactory {
         mediumEnemies.add(new MediumEnemy("Ghoul Face", 330, "An enemy that can turn invisible at will."));
         mediumEnemies.add(new MediumEnemy("Fallen Knight", 300, "A knight that has teamed up with the evil forces."));
         mediumEnemies.add(new MediumEnemy("Witch", 350, "A witch."));
-        // Add more small enemies as needed
     }
 
     @Override

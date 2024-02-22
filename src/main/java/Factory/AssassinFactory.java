@@ -4,24 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This is a concrete factory for the factory design pattern
+ */
 public class AssassinFactory implements CharacterFactory {
 
-    private List<Character> assassin;
+    public List<Character> assassin;
     public AssassinFactory() {
         assassin = new ArrayList<>();
-        initializeAssassin(); // Initialize the list with fighter instances
+        initializeAssassin();
     }
 
     private void initializeAssassin() {
-        // Add multiple Fighter instances with different attributes to the list
-        assassin.add(new Assassin("Assassin", 350, "Stealth."));
+        assassin.add(new Assassin("Assassin", 700, "Stealth."));
 
-        // Add more fighters as needed
     }
 
     @Override
     public Character createCharacter() {
-        // Randomly select a Fighter from the list
+        // This randomly selects a fighter from the list
         Random random = new Random();
         int index = random.nextInt(assassin.size());
         return assassin.get(index);

@@ -1,4 +1,8 @@
 package Factory;
+
+/**
+ * This is a concrete product for the factory design pattern.
+ */
 public class Assassin implements Character {
 
     private String name;

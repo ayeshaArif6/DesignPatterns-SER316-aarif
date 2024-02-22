@@ -3,6 +3,9 @@ package Decorator;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Basic shop is the concrete component for the Decorator design pattern.
+ */
 public class BasicShop implements Shop {
     private List<Item> availableItems;
 
@@ -10,20 +13,12 @@ public class BasicShop implements Shop {
         this.availableItems = new ArrayList<>(initialItems);
     }
 
-    private void initializeItems() {
-        availableItems = new ArrayList<>();
-        availableItems.add(new Potion());
-        availableItems.add(new Potion());
-        availableItems.add(new Sword());
-        availableItems.add(new Shield());
-        availableItems.add(new Helmet());
-        // Add more items as needed...
-    }
     @Override
     public List<Item> getAvailableItems() {
         return new ArrayList<>(availableItems);
     }
 
+    //This method displays all items in shop.
     @Override
     public void displayAvailableItems() {
         System.out.println("-----Welcome To The Shop-----");
@@ -37,6 +32,7 @@ public class BasicShop implements Shop {
         }
     }
 
+    // Since the shop can have only three items at a time, this method randomly puts three objects every time a shop is called.
     private List<Item> getRandomItems(int count) {
         List<Item> randomItems = new ArrayList<>();
 

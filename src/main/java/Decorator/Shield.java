@@ -1,6 +1,8 @@
 package Decorator;
 
-// Concrete Shield implementation
+/**
+ * This class is for the weapon "Shield" that implements the item interface.
+ */
 public class Shield implements Item {
     @Override
     public String getDescription() {

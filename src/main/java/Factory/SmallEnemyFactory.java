@@ -3,8 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This is a concrete factory for the factory design pattern
+ */
 public class SmallEnemyFactory implements EnemyFactory {
-    private List<Enemy> smallEnemies;
+    public List<Enemy> smallEnemies;
 
     public SmallEnemyFactory() {
         smallEnemies = new ArrayList<>();
@@ -15,7 +18,6 @@ public class SmallEnemyFactory implements EnemyFactory {
         smallEnemies.add(new SmallEnemy("Baby Dragon", 140, "A slightly less vicious version of an adult dragon"));
         smallEnemies.add(new SmallEnemy("Goblin", 95,"Small green mini monster"));
         smallEnemies.add(new SmallEnemy("Hugo", 100,"Big flying beast with sharp claws."));
-        // Add more small enemies as needed
     }
 
     @Override
