@@ -10,3 +10,6 @@ My adaptation of the RPG Dungeon Crawler game is inspired by one of my favorite 
    
 3. Observer Pattern:
    I used the observer pattern to implement requirements 8, 10, and 11. Implementing the cycles and floors was made a lot easier using this pattern as the floors and cycles needed to be changed constantly accoridng to the game setup. This is done best using the observer pattern as the whole scenario regarding the change would be changed as well. I used https://www.blackwasp.co.uk/Observer.aspx as my primary resource for getting familiar with these design patterns.
+
+Link to Screencast:
+https://www.loom.com/share/77130c5c86f34de68085262bba0d3575
