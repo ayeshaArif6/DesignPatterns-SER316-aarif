@@ -54,10 +54,12 @@ public class Tests {
 
         Character character1 = assassinFactory.createCharacter();
         Character character2 = assassinFactory.createCharacter();
-        assertNotNull(character1);
-        assertNotNull(character2);
-        assertTrue(character1 instanceof Assassin);
-        assertTrue(character2 instanceof Assassin);
+
+        assertNotNull("Character1 should not be null", character1);
+        assertNotNull("Character2 should not be null", character2);
+
+        assertTrue("Character1 should be an instance of Assassin", character1 instanceof Assassin);
+        assertTrue("Character2 should be an instance of Assassin", character2 instanceof Assassin);
     }
 
     @Test
@@ -72,10 +74,13 @@ public class Tests {
 
         Enemy enemy1 = bossEnemyFactory.createEnemy();
         Enemy enemy2 = bossEnemyFactory.createEnemy();
-        assertNotNull(enemy1);
-        assertNotNull(enemy2);
-        assertTrue(enemy1 instanceof BossEnemy);
-        assertTrue(enemy2 instanceof BossEnemy);
+
+        assertNotNull("Enemy1 should not be null", enemy1);
+        assertNotNull("Enemy2 should not be null", enemy2);
+
+        assertTrue("Enemy1 should be an instance of BossEnemy", enemy1 instanceof BossEnemy);
+        assertTrue("Enemy2 should be an instance of BossEnemy", enemy2 instanceof BossEnemy);
+
     }
 
     @Test
@@ -114,13 +119,18 @@ public class Tests {
     @Test
     public void testCreateMediumEnemy() {
         MediumEnemyFactory mediumEnemyFactory = new MediumEnemyFactory();
+
         Enemy enemy1 = mediumEnemyFactory.createEnemy();
         Enemy enemy2 = mediumEnemyFactory.createEnemy();
 
-        assertTrue(enemy1 instanceof MediumEnemy);
-        assertTrue(enemy2 instanceof MediumEnemy);
-    }
+        assertNotNull("Enemy1 should not be null", enemy1);
+        assertNotNull("Enemy2 should not be null", enemy2);
 
+        assertTrue("Enemy1 should be an instance of MediumEnemy", enemy1 instanceof MediumEnemy);
+        assertTrue("Enemy2 should be an instance of MediumEnemy", enemy2 instanceof MediumEnemy);
+
+
+    }
     @Test
     public void testMediumEnemiesList() {
         MediumEnemyFactory mediumEnemyFactory = new MediumEnemyFactory();
@@ -224,11 +234,16 @@ public class Tests {
     @Test
     public void testCreateSmallEnemy() {
         SmallEnemyFactory smallEnemyFactory = new SmallEnemyFactory();
+
         Enemy enemy1 = smallEnemyFactory.createEnemy();
         Enemy enemy2 = smallEnemyFactory.createEnemy();
 
-        assertTrue(enemy1 instanceof SmallEnemy);
-        assertTrue(enemy2 instanceof SmallEnemy);
+        assertNotNull("Enemy1 should not be null", enemy1);
+        assertNotNull("Enemy2 should not be null", enemy2);
+
+        assertTrue("Enemy1 should be an instance of SmallEnemy", enemy1 instanceof SmallEnemy);
+        assertTrue("Enemy2 should be an instance of SmallEnemy", enemy2 instanceof SmallEnemy);
+
     }
 
     @Test
@@ -285,14 +300,16 @@ public class Tests {
             fail("Unsupported encoding: " + e.getMessage());
         }
     }
+
     @Test
     public void testCreateVampire() {
         VampireFactory vampireFactory = new VampireFactory();
         Player player = vampireFactory.createPlayer();
 
-        assertTrue(player instanceof Vampire);
-    }
+        assertNotNull("Player should not be null", player);
+        assertTrue("Player should be an instance of Vampire", player instanceof Vampire);
 
+    }
     @Test
     public void testGetWarriorName() {
         Warrior warrior = new Warrior("Test Warrior", 200, "Skilled in close combat");
@@ -336,8 +353,12 @@ public class Tests {
         Character character1 = warriorFactory.createCharacter();
         Character character2 = warriorFactory.createCharacter();
 
-        assertTrue(character1 instanceof Warrior);
-        assertTrue(character2 instanceof Warrior);
+        assertNotNull("Character 1 should not be null", character1);
+        assertNotNull("Character 2 should not be null", character2);
+
+        assertTrue("Character 1 should be an instance of Warrior", character1 instanceof Warrior);
+        assertTrue("Character 2 should be an instance of Warrior", character2 instanceof Warrior);
+
     }
 
     @Test
@@ -558,8 +579,9 @@ public class Tests {
     public void testCreatePlayerFae() {
         FaeFactory faeFactory = new FaeFactory();
         Player player = faeFactory.createPlayer();
-        assertNotNull(player);
-        assertTrue(player instanceof Fae);
+
+        assertNotNull("Player should not be null", player);
+        assertTrue("Player should be an instance of Fae", player instanceof Fae);
     }
 
 
