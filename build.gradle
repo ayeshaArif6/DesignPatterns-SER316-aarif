@@ -40,8 +40,20 @@ dependencies {
      toolVersion = "8.8"
  }
 
-jacoco {
-    excludes = ['Main.*']
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+
+    classDirectories.setFrom(
+        fileTree(dir: "build/classes/java/main")
+            .matching {
+                exclude '**/Main.class'
+            }
+    )
 }
 ///////////////////////////////////////////////////////////////////////
 // Configure SpotBugs
