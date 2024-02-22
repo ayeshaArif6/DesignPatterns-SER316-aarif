@@ -516,4 +516,22 @@ public class Tests {
         assertTrue(player instanceof Fae);
     }
 
+
+    @Test
+    public void testDisplayInfo() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        BossEnemy bossEnemy = new BossEnemy("Dragon", 100, "Fire-breathing creature");
+        bossEnemy.displayInfo();
+
+        System.setOut(System.out);
+        String expectedOutput = "BOSS encountered!" + System.lineSeparator() +
+                "It's a Dragon!" + System.lineSeparator() +
+                "Monster health: 100" + System.lineSeparator() +
+                "Monster description: Fire-breathing creature" + System.lineSeparator() +
+                System.lineSeparator();
+
+        assertEquals(expectedOutput, outputStream.toString());
+    }
 }
