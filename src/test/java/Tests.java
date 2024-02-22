@@ -34,6 +34,9 @@ public class Tests {
 
         assertTrue("Character 1 should be an instance of Assassin", character1 instanceof Assassin);
         assertTrue("Character 2 should be an instance of Assassin", character2 instanceof Assassin);
+
+        Assassin assassin1 = (Assassin) character1;
+        Assassin assassin2 = (Assassin) character2;
     }
 
     @Test
