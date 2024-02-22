@@ -6,6 +6,7 @@ package com.pattern.decorator;
 public interface ShopDecorator extends Shop {
     // Additional methods for decorating the shop
     void decorate();
+
     void displayAvailableItems();
 
 }

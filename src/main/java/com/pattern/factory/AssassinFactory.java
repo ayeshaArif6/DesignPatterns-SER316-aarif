@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * This is a concrete factory for the factory design pattern
+ * This is a concrete factory for the factory design pattern.
  */
 public class AssassinFactory implements CharacterFactory {
 
     public List<Character> assassin;
+
     public AssassinFactory() {
         assassin = new ArrayList<>();
         initializeAssassin();

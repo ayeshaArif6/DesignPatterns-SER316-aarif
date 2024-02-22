@@ -1,12 +1,14 @@
 package com.pattern.factory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /**
- * This is a concrete factory for the factory design pattern
+ * This is a concrete factory for the factory design pattern.
  */
 public class ShadowsingerFactory implements CharacterFactory {
+
 
     private List<Character> shadowsinger;
     public ShadowsingerFactory() {

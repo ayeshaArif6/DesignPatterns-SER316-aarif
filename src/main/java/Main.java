@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import com.pattern.factory.*;
 import com.pattern.factory.*;
 import com.pattern.decorator.*;
@@ -11,6 +10,7 @@ import com.pattern.decorator.*;
 import com.pattern.factory.Character;
 import com.pattern.observer.Observer;
 
+import java.util.Random;
 public class Main {
 
     private List<Player> players;
@@ -109,7 +109,8 @@ public class Main {
     }
 
     /**
-     * This method sets the recommended weapon for small sized monsters since this is an automated game.
+     * This method sets the recommended weapon for small sized monsters since this is an
+     * automated game.
      * @param smallEnemy
      * @return
      */
@@ -121,13 +122,13 @@ public class Main {
             smallRecommendedWeapons.add(new Dagger());
         } else if ("Baby Dragon".equals(smallEnemy.getName())) {
             smallRecommendedWeapons.add(new Crossbow());
-        }else if ("Naga".equals(smallEnemy.getName())) {
+        } else if ("Naga".equals(smallEnemy.getName())) {
             smallRecommendedWeapons.add(new Helmet());
-        }else if ("Hound".equals(smallEnemy.getName())) {
+        } else if ("Hound".equals(smallEnemy.getName())) {
             smallRecommendedWeapons.add(new Dagger());
-        }else if ("Hugo".equals(smallEnemy.getName())) {
+        } else if ("Hugo".equals(smallEnemy.getName())) {
             smallRecommendedWeapons.add(new Helmet());
-        }else if ("Wrym".equals(smallEnemy.getName())) {
+        } else if ("Wrym".equals(smallEnemy.getName())) {
             smallRecommendedWeapons.add(new Shield());
         }
         return smallRecommendedWeapons;
@@ -204,13 +205,18 @@ public class Main {
         System.out.println();
         System.out.println("----------==========Background==========------------");
         System.out.println();
-        System.out.println("This is a text-based automated RPG Dungeon Crawler game that is influenced by the famous novel series 'A Court Of Thorns And Roses' better known as ACOTAR");
-        System.out.println("The player types used in this game such as Mortal, Fae, and Vampire are based off of the main characters in these books. The Character types used such as Assassin, Shdowsinger, and Warrior are also from the the story line ");
-        System.out.println("The game starts off at level 1 and finishes at the dungeons in level 40. Small-sized monsters, medium-sized monsters and BOSS monsters all await in these dark depths. ");
+        System.out.println("This is a text-based automated RPG Dungeon Crawler game that is influenced by the" +
+                " famous novel series 'A Court Of Thorns And Roses' better known as ACOTAR");
+        System.out.println("The player types used in this game such as Mortal, Fae, and Vampire are based off" +
+                " of the main characters in these books. The Character types used such as Assassin, Shdowsinger," +
+                " and Warrior are also from the the story line ");
+        System.out.println("The game starts off at level 1 and finishes at the dungeons in level 40. Small-sized monsters, " +
+                "medium-sized monsters and BOSS monsters all await in these dark depths. ");
         System.out.println();
         System.out.println("Some useful vocabulary:");
         System.out.println("1. Shadowsinger: A mythical being that can control shadows and turn into shadow as well.");
-        System.out.println("2. Fae: An ancient type of fairy. Not the cute ones with wings but rather they are vicious, blood-thirsty, and cruel.");
+        System.out.println("2. Fae: An ancient type of fairy. Not the cute ones with wings but rather they are vicious," +
+                " blood-thirsty, and cruel.");
         System.out.println();
         System.out.println();
         System.out.println("Let's begin by selecting a character and its type!");
@@ -301,9 +307,9 @@ public class Main {
             List<Item> shopItems = new ArrayList<>();
             shopItems.add(new Sword());
             shopItems.add(new Potion());
-            shopItems.add(new Invisibility_Hat());
+            shopItems.add(new InvisibilityHat());
             shopItems.add(new RarePower());
-            shopItems.add(new Spell_Book());
+            shopItems.add(new SpellBook());
             shopItems.add(new Shield());
 
             // This creates an instance of the shop

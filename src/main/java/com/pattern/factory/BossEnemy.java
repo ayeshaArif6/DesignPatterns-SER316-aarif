@@ -3,7 +3,7 @@ package com.pattern.factory;
 /**
  * This is one of the concrete products for the factory design pattern.
  */
-public class BossEnemy implements Enemy{
+public class BossEnemy implements Enemy {
 
     private String name;
     private int healthPoints;

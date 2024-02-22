@@ -5,7 +5,10 @@ package com.pattern.factory;
  */
 public interface Character {
     void displayInfo();
+
     String getName();
+
     int getHealthPoints();
+
     String getDescription();
 }
