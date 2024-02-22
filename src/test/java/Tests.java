@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import Decorator.*;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -10,7 +11,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
 
-public class FactoryPatternTests {
+public class Tests {
 
     @Before
     public void setUp() throws Exception {
@@ -301,6 +302,158 @@ public class FactoryPatternTests {
 
         assertTrue(character1 instanceof Warrior);
         assertTrue(character2 instanceof Warrior);
+    }
+
+    @Test
+    public void getCrossbowDescription() {
+        Crossbow crossbow = new Crossbow();
+
+        String description = crossbow.getDescription();
+        assertEquals("Crossbow", description);
+    }
+
+    @Test
+    public void getDaggerDescription() {
+        Dagger dagger = new Dagger();
+        String description = dagger.getDescription();
+
+        assertEquals("Dagger", description);
+    }
+
+    @Test
+    public void getHelmetDescription() {
+        Helmet helmet = new Helmet();
+        String description = helmet.getDescription();
+
+        assertEquals("Helmet", description);
+    }
+
+    @Test
+    public void getDescription() {
+        InstantLevelUpItem instantLevelUpItem = new InstantLevelUpItem();
+        String description = instantLevelUpItem.getDescription();
+
+        assertEquals("Instant Level Up", description);
+    }
+
+    @Test
+    public void addWeapon() {
+        Inventory inventory = new Inventory();
+        Item weapon = new Dagger();
+
+        inventory.addWeapon(weapon);
+        List<Item> weapons = inventory.getWeapons();
+        assertEquals(1, weapons.size());
+        assertTrue(weapons.contains(weapon));
+    }
+
+    @Test
+    public void getHatDescription() {
+        Invisibility_Hat invisibilityHat = new Invisibility_Hat();
+        String description = invisibilityHat.getDescription();
+
+        assertEquals("Invisibility Hat", description);
+    }
+
+    @Test
+    public void constructor() {
+        Players player = new Players(100);
+        Inventory inventory = player.getInventory();
+        List<Item> equippedWeapons = player.getEquippedWeapons();
+
+        assertNotNull(inventory);
+        assertEquals(1, equippedWeapons.size());
+        assertTrue(equippedWeapons.get(0) instanceof Sword);
+        assertEquals(100, player.getHealth());
+    }
+
+    @Test
+    public void equipWeapon() {
+        Players player = new Players(100);
+        Item weapon = new Dagger();
+        player.equipWeapon(weapon);
+        List<Item> equippedWeapons = player.getEquippedWeapons();
+
+        assertEquals(2, equippedWeapons.size());
+        assertTrue(equippedWeapons.contains(weapon));
+    }
+
+    @Test
+    public void addWeaponToInventory() {
+        Players player = new Players(100);
+        Item weapon = new Crossbow();
+        player.addWeaponToInventory(weapon);
+        List<Item> inventoryWeapons = player.getInventory().getWeapons();
+
+        assertEquals(1, inventoryWeapons.size());
+        assertTrue(inventoryWeapons.contains(weapon));
+    }
+
+
+    @Test
+    public void decreaseHealth() {
+        Players player = new Players(100);
+        player.decreaseHealth(Players.EnemyType.SMALL);
+
+        assertEquals(90, player.getHealth());
+    }
+
+    @Test
+    public void decreaseHealth2() {
+        Players player = new Players(20);
+        player.decreaseHealth(Players.EnemyType.BOSS);
+
+        assertEquals(0, player.getHealth());
+    }
+
+    @Test
+    public void getPotionDescription() {
+        Potion potion = new Potion();
+        String description = potion.getDescription();
+
+        assertEquals("Potion", description);
+    }
+
+
+    @Test
+    public void getPowerDescription() {
+        RarePower rarePower = new RarePower();
+        String description = rarePower.getDescription();
+
+        assertEquals("Rare Power", description);
+    }
+
+
+    @Test
+    public void getShieldDescription() {
+        Shield shield = new Shield();
+        String description = shield.getDescription();
+
+        assertEquals("Shield", description);
+    }
+
+    @Test
+    public void getSpellDescription() {
+        Spell_Book spellBook = new Spell_Book();
+        String description = spellBook.getDescription();
+
+        assertEquals("Spell Book", description);
+    }
+
+    @Test
+    public void getSwordDescription() {
+        Sword sword = new Sword();
+        String description = sword.getDescription();
+
+        assertEquals("Sword", description);
+    }
+
+    @Test
+    public void getWhipDescription() {
+        Whip whip = new Whip();
+        String description = whip.getDescription();
+
+        assertEquals("Whip", description);
     }
 
 
