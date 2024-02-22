@@ -1,15 +1,14 @@
-import com.pattern.factory.*;
-import com.pattern.factory.*;
 import com.pattern.decorator.*;
+import com.pattern.factory.*;
+import com.pattern.observer.*;
+import com.pattern.observer.Observer;
 import com.pattern.observer.CycleEventObserver;
 import com.pattern.observer.GameManager;
-import com.pattern.observer.*;
-import com.pattern.decorator.*;
+
 import com.pattern.factory.Character;
 import com.pattern.observer.Observer;
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
@@ -67,7 +66,7 @@ public class Main {
     }
 
     /**
-     * This method randomly selects a Player type and a Character type
+     * This method randomly selects a Player type and a Character type.
      * @return String with player information.
      */
     public String generateRandomPlayerCharacter() {
@@ -79,7 +78,8 @@ public class Main {
         Character randomCharacter = characters.get(characterIndex);
 
         return "Player Class: " + randomPlayer.getClass().getSimpleName() + "\nPlayer Type: " +
-                randomCharacter.getClass().getSimpleName() + "\nHealth: " + randomCharacter.getHealthPoints() + "\nSkills: " + randomCharacter.getDescription();
+                randomCharacter.getClass().getSimpleName() + "\nHealth: " + randomCharacter.getHealthPoints() +
+                "\nSkills: " + randomCharacter.getDescription();
     }
 
     private static Players player;
