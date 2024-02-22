@@ -23,6 +23,20 @@ public class Tests {
     }
 
     @Test
+    public void testCreateAssassinCharacter() {
+        AssassinFactory assassinFactory = new AssassinFactory();
+
+        Character character1 = assassinFactory.createCharacter();
+        Character character2 = assassinFactory.createCharacter();
+
+        assertNotNull("Character 1 should not be null", character1);
+        assertNotNull("Character 2 should not be null", character2);
+
+        assertTrue("Character 1 should be an instance of Assassin", character1 instanceof Assassin);
+        assertTrue("Character 2 should be an instance of Assassin", character2 instanceof Assassin);
+    }
+
+    @Test
     public void testGetNameAssassin() {
         Assassin assassin = new Assassin("Test Assassin", 100, "Test Description");
         assertEquals("Test Assassin", assassin.getName());
