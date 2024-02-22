@@ -154,7 +154,7 @@ public class Tests {
 
         assertEquals(expectedOutput, outputStream.toString());
     }
-    
+
     @Test
     public void testDisplayInfoMortal() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
