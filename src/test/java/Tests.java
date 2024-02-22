@@ -12,6 +12,7 @@ import com.pattern.factory.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class Tests {
@@ -20,7 +21,7 @@ public class Tests {
     public void setUp() throws Exception {
 
     }
-   
+
     @Test
     public void testGetNameAssassin() {
         Assassin assassin = new Assassin("Test Assassin", 100, "Test Description");
@@ -89,12 +90,17 @@ public class Tests {
     @Test
     public void testDisplayInfoFae() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        Fae fae = new Fae();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        fae.displayInfo();
-        System.setOut(System.out);
-        assertTrue(outputStream.toString().contains("This is a Fae."));
+            Fae fae = new Fae();
+            fae.displayInfo();
+
+            System.setOut(System.out);
+            assertTrue(outputStream.toString().contains("This is a Fae."));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
     @Test
