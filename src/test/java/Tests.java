@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import Decorator.*;
 import Observer.CycleEventObserver;
+import Observer.GameManager;
 import Observer.HealthEventObserver;
 import org.junit.Before;
 
@@ -11,6 +12,7 @@ import Factory.Character;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.List;
 
 public class Tests {
@@ -495,5 +497,23 @@ public class Tests {
 
         assertTrue(printedOutput.isEmpty());
     }
-    
+
+
+    @Test
+    public void testCreatePlayer() {
+        MortalFactory mortalFactory = new MortalFactory();
+        Player player = mortalFactory.createPlayer();
+
+        assertNotNull(player);
+        assertTrue(player instanceof Mortal);
+    }
+
+    @Test
+    public void testCreatePlayerFae() {
+        FaeFactory faeFactory = new FaeFactory();
+        Player player = faeFactory.createPlayer();
+        assertNotNull(player);
+        assertTrue(player instanceof Fae);
+    }
+
 }
