@@ -98,7 +98,6 @@ public class Tests {
 
             System.setOut(System.out);
 
-            // Explicitly specify the character encoding
             String output = outputStream.toString("UTF-8");
 
             assertTrue(output.contains("This is a Fae."));
@@ -134,50 +133,66 @@ public class Tests {
     @Test
     public void testDisplayInfoMedium() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        MediumEnemy mediumEnemy = new MediumEnemy("Test Medium Monster", 200, "Test Monster Description");
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        mediumEnemy.displayInfo();
+            MediumEnemy mediumEnemy = new MediumEnemy("Test Medium Monster", 200, "Test Monster Description");
+            mediumEnemy.displayInfo();
 
-        System.setOut(System.out);
-        String expectedOutput = "Medium Monster encountered!" +
-                System.lineSeparator() +
-                "It's a Test Medium Monster!" +
-                System.lineSeparator() +
-                "Monster health: 200" +
-                System.lineSeparator() +
-                "Monster description: Test Monster Description" +
-                System.lineSeparator() +
-                System.lineSeparator();
+            System.setOut(System.out);
 
-        assertEquals(expectedOutput, outputStream.toString());
+            // Explicitly specify the character encoding
+            String expectedOutput = "Medium Monster encountered!" +
+                    System.lineSeparator() +
+                    "It's a Test Medium Monster!" +
+                    System.lineSeparator() +
+                    "Monster health: 200" +
+                    System.lineSeparator() +
+                    "Monster description: Test Monster Description" +
+                    System.lineSeparator() +
+                    System.lineSeparator();
+
+            assertEquals(expectedOutput, outputStream.toString("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
+
 
     @Test
     public void testDisplayInfoMortal() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        Mortal mortal = new Mortal();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        mortal.displayInfo();
-        System.setOut(System.out);
+            Mortal mortal = new Mortal();
+            mortal.displayInfo();
 
-        assertTrue(outputStream.toString().contains("This is a Mortal."));
+            System.setOut(System.out);
+
+            assertTrue(outputStream.toString("UTF-8").contains("This is a Mortal."));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
     @Test
     public void testDisplayInfoShadowsinger() {
         Shadowsinger shadowsinger = new Shadowsinger("Test Shadowsinger", 150, "Stealthy assassin");
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        shadowsinger.displayInfo();
+            shadowsinger.displayInfo();
 
-        System.setOut(System.out);
-        String expectedOutput = "This is a Shadowsinger named Test Shadowsinger with 150 health points. Description: Stealthy assassin\n";
-        assertTrue(outputStream.toString().contains(expectedOutput.trim()));
+            System.setOut(System.out);
+            String expectedOutput = "This is a Shadowsinger named Test Shadowsinger with 150 health points. Description: Stealthy assassin\n";
+
+            assertTrue(outputStream.toString("UTF-8").contains(expectedOutput.trim()));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
-
     @Test
     public void testGetNameShadowsinger() {
         Shadowsinger shadowsinger = new Shadowsinger("Test Shadowsinger", 150, "Stealthy assassin");
@@ -227,38 +242,49 @@ public class Tests {
 
     @Test
     public void testDisplayInfoSmall() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
         SmallEnemy smallEnemy = new SmallEnemy("Test Small Monster", 200, "Test Monster Description");
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        smallEnemy.displayInfo();
+            smallEnemy.displayInfo();
 
-        System.setOut(System.out);
-        String expectedOutput = "Small Monster encountered!" +
-                System.lineSeparator() +
-                "It's a Test Small Monster!" +
-                System.lineSeparator() +
-                "Monster health: 200" +
-                System.lineSeparator() +
-                "Monster description: Test Monster Description" +
-                System.lineSeparator() +
-                System.lineSeparator();
+            System.setOut(System.out);
+            String expectedOutput = "Small Monster encountered!" +
+                    System.lineSeparator() +
+                    "It's a Test Small Monster!" +
+                    System.lineSeparator() +
+                    "Monster health: 200" +
+                    System.lineSeparator() +
+                    "Monster description: Test Monster Description" +
+                    System.lineSeparator() +
+                    System.lineSeparator();
 
-        assertEquals(expectedOutput, outputStream.toString());
+            assertEquals(expectedOutput, outputStream.toString("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
 
     @Test
     public void testDisplayInfoVampire() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
         Vampire vampire = new Vampire();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        vampire.displayInfo();
-        System.setOut(System.out);
-        assertTrue(outputStream.toString().contains("This is a Vampire."));
+            vampire.displayInfo();
+
+            System.setOut(System.out);
+            String expectedOutput = "This is a Vampire." + System.lineSeparator();
+
+            // Explicitly specify the character encoding
+            assertEquals(expectedOutput, outputStream.toString("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
-
     @Test
     public void testCreateVampire() {
         VampireFactory vampireFactory = new VampireFactory();
@@ -289,14 +315,19 @@ public class Tests {
     public void testDisplayInfoWarrior() {
         Warrior warrior = new Warrior("Test Warrior", 300, "Sword skills");
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        warrior.displayInfo();
+            warrior.displayInfo();
 
-        System.setOut(System.out);
-        String expectedOutput = "This is a Fighter named Test Warrior with 300 health points. Description: Sword skills" +
-                System.lineSeparator();
-        assertTrue(outputStream.toString().contains(expectedOutput.trim()));
+            System.setOut(System.out);
+            String expectedOutput = "This is a Fighter named Test Warrior with 300 health points. Description: Sword skills"
+                    + System.lineSeparator();
+            
+            assertEquals(expectedOutput, outputStream.toString("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
     @Test
