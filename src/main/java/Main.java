@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import com.pattern.factory.*;
 import com.pattern.factory.*;
 import com.pattern.decorator.*;
@@ -9,8 +8,10 @@ import com.pattern.decorator.*;
 import com.pattern.factory.Character;
 import com.pattern.observer.Observer;
 
-import java.util.Random;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Main {
 
     private List<Player> players;
