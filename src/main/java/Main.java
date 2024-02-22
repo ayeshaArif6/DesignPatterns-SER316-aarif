@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import Factory.*;
 import com.pattern.factory.*;
-import Decorator.*;
+import com.pattern.factory.*;
+import com.pattern.decorator.*;
 import com.pattern.observer.CycleEventObserver;
 import com.pattern.observer.GameManager;
-import Observer.*;
+import com.pattern.observer.*;
 import com.pattern.decorator.*;
 import com.pattern.factory.Character;
 import com.pattern.observer.Observer;
