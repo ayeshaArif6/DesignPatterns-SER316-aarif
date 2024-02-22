@@ -323,7 +323,7 @@ public class Tests {
             System.setOut(System.out);
             String expectedOutput = "This is a Fighter named Test Warrior with 300 health points. Description: Sword skills"
                     + System.lineSeparator();
-            
+
             assertEquals(expectedOutput, outputStream.toString("UTF-8"));
         } catch (UnsupportedEncodingException e) {
             fail("Unsupported encoding: " + e.getMessage());
@@ -498,37 +498,51 @@ public class Tests {
     public void testUpdateCycleEvent() {
         CycleEventObserver observer = new CycleEventObserver();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        observer.updateCycleEvent(1);
-        String printedOutput = outputStream.toString().trim();
+            observer.updateCycleEvent(1);
+            String printedOutput = outputStream.toString("UTF-8").trim();
 
-        assertEquals("Cycle 1", printedOutput);
+            assertEquals("Cycle 1", printedOutput);
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
 
     @Test
     public void testUpdateHealthEvent() {
-
         CycleEventObserver observer = new CycleEventObserver();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        observer.updateHealthEvent(100, 75);
-        String printedOutput = outputStream.toString().trim();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        assertTrue(printedOutput.isEmpty());
+            observer.updateHealthEvent(100, 75);
+            String printedOutput = outputStream.toString("UTF-8").trim();
+
+            assertTrue(printedOutput.isEmpty());
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
 
     @Test
     public void testUpdateCycleEvent2() {
         HealthEventObserver observer = new HealthEventObserver();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-        observer.updateCycleEvent(1);
-        String printedOutput = outputStream.toString().trim();
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        assertTrue(printedOutput.isEmpty());
+            observer.updateCycleEvent(1);
+            String printedOutput = outputStream.toString("UTF-8").trim();
+
+            assertTrue(printedOutput.isEmpty());
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
+
 
 
     @Test
@@ -552,18 +566,23 @@ public class Tests {
     @Test
     public void testDisplayInfo() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+        try (PrintStream printStream = new PrintStream(outputStream, true, "UTF-8")) {
+            System.setOut(printStream);
 
-        BossEnemy bossEnemy = new BossEnemy("Dragon", 100, "Fire-breathing creature");
-        bossEnemy.displayInfo();
+            BossEnemy bossEnemy = new BossEnemy("Dragon", 100, "Fire-breathing creature");
+            bossEnemy.displayInfo();
 
-        System.setOut(System.out);
-        String expectedOutput = "BOSS encountered!" + System.lineSeparator() +
-                "It's a Dragon!" + System.lineSeparator() +
-                "Monster health: 100" + System.lineSeparator() +
-                "Monster description: Fire-breathing creature" + System.lineSeparator() +
-                System.lineSeparator();
+            System.setOut(System.out);
+            String expectedOutput = "BOSS encountered!" + System.lineSeparator() +
+                    "It's a Dragon!" + System.lineSeparator() +
+                    "Monster health: 100" + System.lineSeparator() +
+                    "Monster description: Fire-breathing creature" + System.lineSeparator() +
+                    System.lineSeparator();
 
-        assertEquals(expectedOutput, outputStream.toString());
+            assertEquals(expectedOutput, outputStream.toString("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            fail("Unsupported encoding: " + e.getMessage());
+        }
     }
+
 }
