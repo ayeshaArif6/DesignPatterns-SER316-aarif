@@ -1,11 +1,11 @@
 import com.pattern.decorator.*;
 import com.pattern.factory.*;
 import com.pattern.observer.*;
-import com.pattern.observer.Observer;
-import com.pattern.observer.CycleEventObserver;
-import com.pattern.observer.GameManager;
-
 import com.pattern.factory.Character;
+import com.pattern.observer.CycleEventObserver;
+import com.pattern.observer.Observer;
+
+import com.pattern.observer.GameManager;
 import com.pattern.observer.Observer;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +17,7 @@ public class Main {
     private List<Character> characters;
 
     private int currentFloor;
+
     public void incrementFloor() {
         this.currentFloor++;
     }
@@ -24,6 +25,7 @@ public class Main {
     public int getCurrentFloor() {
         return currentFloor;
     }
+    
     public void generateEnemy(EnemyFactory enemyFactory) {
         Enemy enemy = enemyFactory.createEnemy();
         enemy.displayInfo();
@@ -206,17 +208,30 @@ public class Main {
         System.out.println();
         System.out.println("----------==========Background==========------------");
         System.out.println();
-        System.out.println("This is a text-based automated RPG Dungeon Crawler game that is influenced by the" +
+        System.out.println("This is a text-based automated RPG Dungeon Crawler game that is"
+                +
+                " influenced by the"
+                +
                 " famous novel series 'A Court Of Thorns And Roses' better known as ACOTAR");
-        System.out.println("The player types used in this game such as Mortal, Fae, and Vampire are based off" +
-                " of the main characters in these books. The Character types used such as Assassin, Shdowsinger," +
+        System.out.println("The player types used in this game such as Mortal, Fae, and Vampire are based off"
+                +
+                " of the main characters in these books. The Character types used such as Assassin, Shdowsinger,"
+                +
                 " and Warrior are also from the the story line ");
-        System.out.println("The game starts off at level 1 and finishes at the dungeons in level 40. Small-sized monsters, " +
+        System.out.println("The game starts off at level 1 and finishes at the dungeons in level 40. "
+                +
+                "Small-sized monsters, "
+                +
                 "medium-sized monsters and BOSS monsters all await in these dark depths. ");
         System.out.println();
         System.out.println("Some useful vocabulary:");
-        System.out.println("1. Shadowsinger: A mythical being that can control shadows and turn into shadow as well.");
-        System.out.println("2. Fae: An ancient type of fairy. Not the cute ones with wings but rather they are vicious," +
+        System.out.println("1. Shadowsinger: A mythical being that can control shadows and turn into "
+                +
+                "shadow as well.");
+        System.out.println("2. Fae: An ancient type of fairy. Not the cute ones with wings but rather t"
+                +
+                "hey are vicious,"
+                +
                 " blood-thirsty, and cruel.");
         System.out.println();
         System.out.println();
@@ -276,13 +291,15 @@ public class Main {
            // This displays the weapon inventory before the battle commences with the enemy.
             dungeonCrawler.getInventory().displayWeapons();
 
-            // Since the game is automated, this lets the player automatically pick a weapon based on the enemy type
+            // Since the game is automated, this lets the player automatically pick
+            // a weapon based on the enemy type
             List<Item> recommendedWeapons = dungeonCrawler.getRecommendedWeapons(encounteredEnemy);
             System.out.println();
             if (!recommendedWeapons.isEmpty()) {
                 Item recommendedWeapon = recommendedWeapons.get(0);
 
-                System.out.println("To fight the upcoming monster, it might be best to use a " +
+                System.out.println("To fight the upcoming monster, it might be best to use a "
+                        +
                         recommendedWeapon.getDescription());
                 System.out.println("Automatically picked " + recommendedWeapon.getDescription());
             } else {
