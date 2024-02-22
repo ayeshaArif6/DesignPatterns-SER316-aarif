@@ -352,7 +352,7 @@ public class Tests {
 
     @Test
     public void getHatDescription() {
-        Invisibility_Hat invisibilityHat = new Invisibility_Hat();
+        InvisibilityHat invisibilityHat = new InvisibilityHat();
         String description = invisibilityHat.getDescription();
 
         assertEquals("Invisibility Hat", description);
@@ -437,7 +437,7 @@ public class Tests {
 
     @Test
     public void getSpellDescription() {
-        Spell_Book spellBook = new Spell_Book();
+        SpellBook spellBook = new SpellBook();
         String description = spellBook.getDescription();
 
         assertEquals("Spell Book", description);
