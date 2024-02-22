@@ -10,4 +10,3 @@ public class CycleEventObserver implements Observer {
     public void updateHealthEvent(int playerHealth, int monsterHealth) {
     }
 }
-

@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 
 import Decorator.*;
+import Observer.CycleEventObserver;
+import Observer.HealthEventObserver;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -458,5 +460,40 @@ public class Tests {
 
 
 
+    @Test
+    public void testUpdateCycleEvent() {
+        CycleEventObserver observer = new CycleEventObserver();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
 
+        observer.updateCycleEvent(1);
+        String printedOutput = outputStream.toString().trim();
+
+        assertEquals("Cycle 1", printedOutput);
+    }
+
+
+    @Test
+    public void testUpdateHealthEvent() {
+
+        CycleEventObserver observer = new CycleEventObserver();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        observer.updateHealthEvent(100, 75);
+        String printedOutput = outputStream.toString().trim();
+
+        assertTrue(printedOutput.isEmpty());
+    }
+
+    @Test
+    public void testUpdateCycleEvent2() {
+        HealthEventObserver observer = new HealthEventObserver();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        observer.updateCycleEvent(1);
+        String printedOutput = outputStream.toString().trim();
+
+        assertTrue(printedOutput.isEmpty());
+    }
+    
 }
