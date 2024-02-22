@@ -25,7 +25,7 @@ public class Main {
     public int getCurrentFloor() {
         return currentFloor;
     }
-    
+
     public void generateEnemy(EnemyFactory enemyFactory) {
         Enemy enemy = enemyFactory.createEnemy();
         enemy.displayInfo();

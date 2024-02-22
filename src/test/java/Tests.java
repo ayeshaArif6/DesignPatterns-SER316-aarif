@@ -29,7 +29,7 @@ public class Tests {
 
         assassin.displayInfo();
         System.setOut(System.out);
-        assertTrue(outputStream.toString().contains("This is a Assassin."));
+        assertTrue(outputStream.toString().contains("This is an Assassin."));
     }
 
 
@@ -65,6 +65,8 @@ public class Tests {
 
         Character character1 = assassinFactory.createCharacter();
         Character character2 = assassinFactory.createCharacter();
+        assertNotNull(character1);
+        assertNotNull(character2);
         assertTrue(character1 instanceof Assassin);
         assertTrue(character2 instanceof Assassin);
     }
@@ -81,6 +83,8 @@ public class Tests {
 
         Enemy enemy1 = bossEnemyFactory.createEnemy();
         Enemy enemy2 = bossEnemyFactory.createEnemy();
+        assertNotNull(enemy1);
+        assertNotNull(enemy2);
         assertTrue(enemy1 instanceof BossEnemy);
         assertTrue(enemy2 instanceof BossEnemy);
     }
@@ -150,7 +154,7 @@ public class Tests {
 
         assertEquals(expectedOutput, outputStream.toString());
     }
-
+    
     @Test
     public void testDisplayInfoMortal() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
