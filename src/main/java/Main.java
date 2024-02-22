@@ -2,11 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import Factory.*;
-import Factory.Character;
+import com.pattern.factory.*;
 import Decorator.*;
-import Observer.CycleEventObserver;
-import Observer.GameManager;
+import com.pattern.observer.CycleEventObserver;
+import com.pattern.observer.GameManager;
 import Observer.*;
+import com.pattern.decorator.*;
+import com.pattern.factory.Character;
+import com.pattern.observer.Observer;
 
 public class Main {
 

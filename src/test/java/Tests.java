@@ -1,18 +1,17 @@
 import static org.junit.Assert.*;
 
-import Decorator.*;
-import Observer.CycleEventObserver;
-import Observer.GameManager;
-import Observer.HealthEventObserver;
+import com.pattern.decorator.*;
+import com.pattern.observer.CycleEventObserver;
+import com.pattern.observer.HealthEventObserver;
+import com.pattern.factory.*;
+import com.pattern.factory.Character;
 import org.junit.Before;
 
 import org.junit.Test;
 import Factory.*;
-import Factory.Character;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
 import java.util.List;
 
 public class Tests {
