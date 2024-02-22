@@ -8,7 +8,7 @@ import com.pattern.factory.Character;
 import org.junit.Before;
 
 import org.junit.Test;
-import Factory.*;
+import com.pattern.factory.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
