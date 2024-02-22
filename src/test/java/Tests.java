@@ -97,7 +97,11 @@ public class Tests {
             fae.displayInfo();
 
             System.setOut(System.out);
-            assertTrue(outputStream.toString().contains("This is a Fae."));
+
+            // Explicitly specify the character encoding
+            String output = outputStream.toString("UTF-8");
+
+            assertTrue(output.contains("This is a Fae."));
         } catch (UnsupportedEncodingException e) {
             fail("Unsupported encoding: " + e.getMessage());
         }
