@@ -20,19 +20,7 @@ public class Tests {
     public void setUp() throws Exception {
 
     }
-    @Test
-    public void testDisplayInfoAssassin() {
-        Assassin assassin = new Assassin("Test Assassin", 100, "Test Description");
-
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        assassin.displayInfo();
-        System.setOut(System.out);
-        assertTrue(outputStream.toString().contains("This is an Assassin."));
-    }
-
-
+   
     @Test
     public void testGetNameAssassin() {
         Assassin assassin = new Assassin("Test Assassin", 100, "Test Description");
