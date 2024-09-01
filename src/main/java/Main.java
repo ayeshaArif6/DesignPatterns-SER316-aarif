@@ -384,7 +384,7 @@ public class Main {
             encounteredShop.displayAvailableItems();
 
         }
-
+//ayesha
     }
 }
 
